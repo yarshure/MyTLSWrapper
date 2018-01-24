@@ -12,7 +12,25 @@
 		6903CDED20181E2600642B68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6903CDEB20181E2600642B68 /* Main.storyboard */; };
 		6903CDEF20181E2600642B68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6903CDEE20181E2600642B68 /* Assets.xcassets */; };
 		6903CDF220181E2600642B68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6903CDF020181E2600642B68 /* LaunchScreen.storyboard */; };
+		6903CDFC20181EEB00642B68 /* MyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6903CDFB20181EEB00642B68 /* MyWrapper.swift */; };
+		6903CDFE2018217600642B68 /* TLSextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6903CDFD2018217600642B68 /* TLSextension.swift */; };
+		6903CDFF2018263900642B68 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6903CDF920181ECC00642B68 /* CocoaAsyncSocket.framework */; };
+		6903CE002018263900642B68 /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6903CDF920181ECC00642B68 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6903CE012018263900642B68 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6903CE002018263900642B68 /* CocoaAsyncSocket.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6903CDE420181E2600642B68 /* MyTLSWrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTLSWrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +40,9 @@
 		6903CDEE20181E2600642B68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6903CDF120181E2600642B68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6903CDF320181E2600642B68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6903CDF920181ECC00642B68 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
+		6903CDFB20181EEB00642B68 /* MyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWrapper.swift; sourceTree = "<group>"; };
+		6903CDFD2018217600642B68 /* TLSextension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLSextension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6903CDFF2018263900642B68 /* CocoaAsyncSocket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,7 +76,10 @@
 		6903CDE620181E2600642B68 /* MyTLSWrapper */ = {
 			isa = PBXGroup;
 			children = (
+				6903CDF920181ECC00642B68 /* CocoaAsyncSocket.framework */,
 				6903CDE720181E2600642B68 /* AppDelegate.swift */,
+				6903CDFB20181EEB00642B68 /* MyWrapper.swift */,
+				6903CDFD2018217600642B68 /* TLSextension.swift */,
 				6903CDE920181E2600642B68 /* ViewController.swift */,
 				6903CDEB20181E2600642B68 /* Main.storyboard */,
 				6903CDEE20181E2600642B68 /* Assets.xcassets */,
@@ -74,6 +99,7 @@
 				6903CDE020181E2600642B68 /* Sources */,
 				6903CDE120181E2600642B68 /* Frameworks */,
 				6903CDE220181E2600642B68 /* Resources */,
+				6903CE012018263900642B68 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,6 +162,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6903CDFC20181EEB00642B68 /* MyWrapper.swift in Sources */,
+				6903CDFE2018217600642B68 /* TLSextension.swift in Sources */,
 				6903CDEA20181E2600642B68 /* ViewController.swift in Sources */,
 				6903CDE820181E2600642B68 /* AppDelegate.swift in Sources */,
 			);
@@ -276,6 +304,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 745WQDK4L7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyTLSWrapper/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MyTLSWrapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yarshure.MyTLSWrapper;
@@ -291,6 +323,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 745WQDK4L7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyTLSWrapper/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MyTLSWrapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yarshure.MyTLSWrapper;
